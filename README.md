@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kinde Next.js Starter
 
-## Getting Started
+![Composite of the project running in a browser window]()
 
-First, run the development server:
+A starter template using [Next.js](https://nextjs.org) and [Kinde](https://kinde.com) for authentication.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Pre-requisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 1. Create a Kinde account
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a [Kinde](https://app.kinde.com/register) account if you don't already have one.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 2. Add a back-end application in Kinde
 
-## Learn More
+1. Go to `Settings > Applications`.
+2. Select `Add application` in the top right.
+3. Give your application a name and make sure you select `Back-end web` as the application type.
+4. Select `Save`.
+5. In the `Quick start` screen, select `Next.js` as the technology and `Save`.
+6. Select `Authentication` in the left menu.
+7. Enable at least one authentication method for your application (e.g. "Email + code")
+8. Then `Save`.
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Create a Vercel account
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create a [Vercel](https://vercel.com/signup) account if you don't already have one.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Get your environment variables from Kinde
 
-## Deploy on Vercel
+1. In Kinde, go to `Settings > Applications > [Your app] > Details`.
+2. Copy the following values in the `App keys` section:
+   - `Domain`
+   - `Client ID`
+   - `Client secret`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy this template
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+When you click the **deploy** button below, you will be prompted to fill in the environment variables you copied previously. These are required to successfully deploy this template.
+
+<a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkinde-starter-kits%2Fkinde-nexjs-vercel-starter&env=KINDE_ISSUER_URL,KINDE_CLIENT_ID,KINDE_CLIENT_SECRET&envDescription=Find%20your%20application%20keys&envLink=https%3A%2F%2Fdocs.kinde.com%2Fget-started%2Fconnect%2Fgetting-app-keys%2F%&project-name=kinde-nextjs-vercel-starter&repository-name=kinde-nextjs-starter&demo-title=Kinde%20Next.js%20Starter&demo-description=A%20Next.js%20authentication%20starter%20template%20using%20Kinde%2C%20TypeScript%20and%20tailwindcss.&demo-url=https%3A%2F%2Fkinde-nextjs-starter.vercel.app%2F"><img src="https://vercel.com/button" alt="Deploy with Vercel"/></a>
+
+- `KINDE_ISSUER_URL`: `Domain` value.
+- `KINDE_CLIENT_ID`: `Client ID` value.
+- `KINDE_CLIENT_SECRET`: `Client secret` value.
+
+## After you deploy
+
+### Set callback URLs
+
+> [!IMPORTANT]
+> Make sure to replace `[your-vercel-slug]` in the code examples below with your Vercel project or team slug, but keep the `*` (asterisk).
+> [More info on wild card callback URLs in Kinde](https://docs.kinde.com/get-started/connect/callback-urls/?r=search#wildcards-in-callback-urls)
+
+1. In Kinde, go to `Settings > Applications > [Your app] > View details`.
+
+2. Add your callback URLs in the relevant fields:
+
+   - #### Allowed callback URLs:
+
+   ```bash
+   http://localhost:3000/api/auth/kinde_callback
+   https://*[your-vercel-slug].vercel.com/api/auth/kinde_callback
+   ```
+
+   - #### Allowed logout redirect URLs:
+
+   ```bash
+   http://localhost:3000
+   https://*[your-vercel-slug].vercel.com
+   ```
+
+3. Then `Save`.
+
+## Run locally
+
+1. Clone this repository.
+   ```sh
+   git clone https://github.com/kinde-starter-kits/kinde-nexjs-vercel-starter
+   ```
+2. [Create a Kinde account](#1-create-a-kinde-account).
+3. [Create a backend application](#2-add-a-backend-application-in-kinde).
+4. Make sure you enabled at least one connection for your application in Kinde (e.g. "Email + code") under `Settings > Applications > [Your application] > Authentication`.
+5. Add your callback URLs in the relevant fields for your application in Kinde:
+
+   - #### Allowed callback URLs:
+
+   ```bash
+   http://localhost:3000/api/auth/kinde_callback
+   ```
+
+   - #### Allowed logout redirect URLs:
+
+   ```bash
+   http://localhost:3000
+   ```
+
+6. Fill in the missing environment variables in `.env.local.example`
+7. Install the dependencies with `npm run install`
+8. Start the development server with `npm run dev`
