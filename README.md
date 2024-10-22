@@ -17,9 +17,6 @@ Create a [Kinde](https://app.kinde.com/register) account if you don't already ha
 3. Give your application a name and make sure you select `Back-end web` as the application type.
 4. Select `Save`.
 5. In the `Quick start` screen, select `Next.js` as the technology and `Save`.
-6. Select `Authentication` in the left menu.
-7. Enable at least one authentication method for your application (e.g. "Email + code")
-8. Then `Save`.
 
 ### 3. Create a Vercel account
 
@@ -59,14 +56,16 @@ When you click the **deploy** button below, you will be prompted to fill in the 
 
    ```bash
    http://localhost:3000/api/auth/kinde_callback
-   https://*[your-vercel-slug].vercel.com/api/auth/kinde_callback
+   https://[your-vercel-main-production-url].vercel.app/api/auth/kinde_callback
+   https://*[your-vercel-slug].vercel.app/api/auth/kinde_callback
    ```
 
    - #### Allowed logout redirect URLs:
 
    ```bash
    http://localhost:3000
-   https://*[your-vercel-slug].vercel.com
+   https://[your-vercel-main-production-url].vercel.app
+   https://*[your-vercel-slug].vercel.app
    ```
 
 3. Then `Save`.
@@ -79,8 +78,7 @@ When you click the **deploy** button below, you will be prompted to fill in the 
    ```
 2. [Create a Kinde account](#1-create-a-kinde-account).
 3. [Create a backend application](#2-add-a-backend-application-in-kinde).
-4. Make sure you enabled at least one connection for your application in Kinde (e.g. "Email + code") under `Settings > Applications > [Your application] > Authentication`.
-5. Add your callback URLs in the relevant fields for your application in Kinde:
+4. Add your callback URLs in the relevant fields for your application in Kinde:
 
    - #### Allowed callback URLs:
 
@@ -94,6 +92,6 @@ When you click the **deploy** button below, you will be prompted to fill in the 
    http://localhost:3000
    ```
 
-6. Fill in the missing environment variables in `.env.local.example`
-7. Install the dependencies with `npm run install`
-8. Start the development server with `npm run dev`
+5. Fill in the missing environment variables in `.env.local.example`
+6. Install the dependencies with `npm run install`
+7. Start the development server with `npm run dev`
