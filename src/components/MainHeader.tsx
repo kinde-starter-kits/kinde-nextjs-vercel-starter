@@ -71,7 +71,7 @@ export default async function Header({ showNav = true }: HeaderProps) {
         <div className="flex items-center gap-4">
           <a
             target="_blank"
-            href="https://github.com/kinde-starter-kits/kinde-nexjs-vercel-starter"
+            href="https://github.com/kinde-starter-kits/kinde-nextjs-vercel-starter"
             rel="noopener noreferrer"
             className="focus-visible:ring-ring border-input hover:bg-accent hover:text-accent-foreground bg-background inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md border px-4 py-2 text-sm font-medium shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:border-black"
           >
@@ -88,7 +88,7 @@ export default async function Header({ showNav = true }: HeaderProps) {
             <span className="ml-2 hidden md:flex">GitHub</span>
           </a>
           <a
-            href="#"
+            href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkinde-starter-kits%2Fkinde-nextjs-vercel-starter&env=KINDE_ISSUER_URL,KINDE_CLIENT_ID,KINDE_CLIENT_SECRET&envDescription=Find%20your%20application%20keys&envLink=https%3A%2F%2Fdocs.kinde.com%2Fget-started%2Fconnect%2Fgetting-app-keys%2F%&project-name=kinde-nextjs-vercel-starter&repository-name=kinde-nextjs-starter&demo-title=Kinde%20Next.js%20Starter&demo-description=A%20Next.js%20authentication%20starter%20template%20using%20Kinde%2C%20TypeScript%20and%20tailwindcss.&demo-url=https%3A%2F%2Fkinde-nextjs-starter.vercel.app%2F"
             target="_blank"
             className="focus-visible:ring-ring text-primary-foreground inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md bg-black px-4 py-2 text-sm font-medium text-white shadow transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50"
           >
