@@ -15,7 +15,12 @@ export default async function Header({ showNav = true }: HeaderProps) {
   return (
     <header className="sticky top-0 z-10 flex w-full flex-col items-center justify-between gap-4 border-b border-b-slate-100 bg-white/70 p-4 backdrop-blur-md sm:flex-row sm:gap-0 md:p-8 dark:border-b-slate-900 dark:bg-slate-950/85">
       <div className="flex items-center gap-2">
-        <Link href="/" title="Go to the homepage">
+        <Link
+          href="https://kinde.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Go to the Kinde marketing website"
+        >
           <Image
             src={KindeLogo}
             width={64}
