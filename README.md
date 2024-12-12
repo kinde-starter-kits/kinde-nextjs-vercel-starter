@@ -2,7 +2,7 @@
 
 ![Composite of the project running in a browser window](/public/demo-image.png)
 
-A starter template using [Next.js](https://nextjs.org) and [Kinde](https://kinde.com) for authentication.
+A starter template using [Next.js](https://nextjs.org) and [Kinde](https://kinde.com) for authentication. See [live demo](https://kinde-nextjs-starter.vercel.app/).
 
 ## Pre-requisites
 
